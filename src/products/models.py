@@ -7,7 +7,7 @@ class Product(models.Model):
 	title = models.CharField(max_length=200)
 	description = models.CharField(max_length=700)
 	price = models.DecimalField(max_digits=15, decimal_places=2)
-	sale_price = models.DecimalField(max_digits=15, decimal_places=2)
+	sale_price = models.DecimalField(max_digits=15, decimal_places=2, null=True, blank=True)
 	slug = models.SlugField()
 	timestamp = models.DateTimeField(auto_now_add=True)
 	updated = models.DateTimeField(auto_now=True)
