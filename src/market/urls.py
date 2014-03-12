@@ -13,4 +13,8 @@ urlpatterns = patterns('',
     (r'^media/(?P<path>.*)$', 'django.views.static.serve', { 'document_root' : settings.MEDIA_ROOT }),
 
     url(r'^admin/', include(admin.site.urls)),
+
+    url(r'^$', 'products.views.list_products', name='list_products'),
+    url(r'^product/', include('products.urls')),   
+    
 )

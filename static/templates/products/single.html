@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1>{{ product }}</h1>
+{% for url in images %}
+	<img src="{{ MEDIA_URL }}{{ url.image }}" alt="">
+{% endfor %}
+<h2>Категории:</h2>
+<ol>
+	{% for category in categories %}
+		<li>{{ category }}</li>
+	{% endfor %}	
+<ol>
+<h2>Описание:</h2>
+<p>{{ product.description }}</p>
+<h2><a href="{% url 'list_products' %}">На Главную</h2>
+{% endblock %}
