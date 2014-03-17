@@ -10,7 +10,13 @@
 					<img src="{{ MEDIA_URL }}{{ image.image }}" alt="" width="100">
 				{% endif %}
 			{% endfor %}
-			<li><h3><a href="{% url 'single_product' product.id %}">{{ product.title }}</a></h3></li>
+			<li>
+				<h3><a href="{% url 'single_product' product.id %}">{{ product.title }}</a></h3>
+				{% if product.user == request.user %}
+					<a href="{% url 'edit_product' product.id %}">Редактировать</a>
+				{% endif %}
+			</li>
+			
 		{% endfor %}
 	</ol>
 	

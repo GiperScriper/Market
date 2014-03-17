@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ product.title }}</h1>
+
+<form method="POST" action='' enctype="multipart/form-data">{% csrf_token %}
+	{{ formset.management_form }}
+	{% for form in formset %}
+
+		{{ form.as_p }}
+		<input type="submit" value="Сохранить изменения">
+		<hr>
+	{% endfor %}
+	
+</form>
+{% endblock %}

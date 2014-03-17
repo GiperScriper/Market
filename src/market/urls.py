@@ -15,6 +15,6 @@ urlpatterns = patterns('',
     url(r'^admin/', include(admin.site.urls)),
 
     url(r'^$', 'products.views.list_products', name='list_products'),
-    url(r'^product/', include('products.urls')),   
+    url(r'^products/', include('products.urls')),   
     
 )
