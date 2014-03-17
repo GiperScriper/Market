@@ -4,7 +4,7 @@ from .models import Product, Category, ProductImage
 
 def list_products(request):	
 	products = Product.objects.filter(active=True)
-	
+
 	return render_to_response('products/all.html', locals(), context_instance=RequestContext(request))
 
 def product(request, productId):
